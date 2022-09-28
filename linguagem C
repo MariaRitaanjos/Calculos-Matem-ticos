@@ -1,41 +1,42 @@
 //usuário do GitHub Maria Ritaanjos
-#include <stdio.h> // estão localizadas as funções referentes às operações
+#include <stdio.h> // estão localizadas as funções referentes as operações 
 #include <stdio.h>
-#include <locale.h> // estou usando para pode utilizar a linguegem com caracteres e acentuação 
-#include <cmath> // estou usando para declara um conjunto de funções para calcular operações e transformações matemáticas comuns 
+#include <locale.h> // estou usando para pode utilizar a linguegem com caracteres e acentuação
+#include <cmath> // estou usando para declara um conjunto de funções para calcular operações e operações matemáticas comuns 
 #include <conio.h> // estou usando para pode utilizar a linguegem com caracteres e acentuação
 
 
-int main(void) { // aqui estamos chamando a função, e utilizamos o void, pois especifica claramente que main só pode ser chamado sem nenhum parâmetro.
+int main(void) { // aqui estamos chamando a função, e utilizamos o void, pois especifica claramente que main pode ser chamado sem nenhum parâmetro
 
-	int n; // estou usando para imprimir na tela o tipo de operação que o usuario vai escolher, atravez do número 1 ou 2 
+	int n; // estou usando para imprimir na tela o tipo de operações que o usuario vai escolher, atravez do número 1 ou 2 
 	                                                       
     float numero1, numero2, sum, sub, mult, div, pot, rai, med;  
 	// sum= soma, sub= subtração, mult=multiplicação, div=divisão, pot= potenciação, rai=raiz, med= media 
 	// aqui estamos definindo valores numéricos como pontos flutuantes                                            
-    printf("Maria Rita Pitol dos Anjos,\n Analise e Desenvolvimento de Sistemas\n La Salle\n 202221305\n"); // aqui estamos imprimindo minhas informações 
+    printf("Maria Rita Pitol dos Anjos,\n Analise e Desenvolvimento de Sistemas\n La Salle\n 202221305\n"); // aqui estamos imprimindo minhas informaÃ§Ãµes 
 
     setlocale(LC_ALL, "Portuguese"); // aqui fazemos para utlizar a linguagem
-    printf("Utilizando caracteres e acentuação da língua portuguesa!\n\n");
+    printf("Utilizando caracteres e acentuação da liguagem portuguesa!\n\n");
 
 
-    printf("Digite uma operação\n 1-raiz\n 2-soma, subtração, multiplicação, divisão, potenciação e média\n\n"); // aqui colocamos essas duas variaveis para questionar o usuario a operação desejada 
+    printf("Digite uma operação\n 1-raiz\n 2-soma, subtração, multiplicação, divisão, potenciação e média\n\n"); // aqui colocamos essas duas variaveis para questionar o usuario a operaÃ§Ã£o desejada 
    
     scanf("%d",&n); // sigla de tipo - %d) - armazena um número inteiro
-	printf("Só pode ser digitado o número 1 ou 2\n\n"); // esse seria para não colocarmos números diferentes das opções da
-    
+	if(n != 1 && n != 2) {
+	printf("Só pode ser digitado o número 1 ou 2\n\n");
+	} // esse seria para não colocarmos números diferentes de 1 ou 2 e se colcacar aparecer a mensagem
     
     printf("Digite o primeiro número: " );
-    scanf("%f", &numero1); //sigla de tipo - %f) - armazena um número rea
+    scanf("%f", &numero1); //sigla de tipo - %f) - armazena um número real
     printf("Digite o segundo número: " );
-    scanf("%f", &numero2);  // aqui estamos pedindo os números para realizar a operação 
+    scanf("%f", &numero2);  // aqui estamos pedindo os números para realizar a operações
 	
-	if(n==1){  // aqui deixo claro que se a pessoa escolher o número 1 ela vai escolher a operação de raiz 
-    rai= sqrt(numero1);	// aqui estou fazendo as operaçãoes para depois colocar a resposta no console 
+	if(n==1){  // aqui deixo claro que se a pessoa escolher o número 1 ela vai escolher a operações de raiz 
+    rai= sqrt(numero1);	// aqui estou fazendo a operação para depois colocar a resposta no console 
 	printf("raiz do número  %.2f é %.2f \n", numero1, rai); // aqui vai monstrar a resposta ao usuário
 }
 	
-    if(n==2){  // aqui deixamos claro que se a pessoa escolher o número 2 vai escolher as seguintes operações
+    if(n==2){  // aqui deixamos claro que se a pessoa escolher o número 2 vai escolher as seguintes operações 
     sum = numero1 + numero2;
     sub = numero1 - numero2;
 	mult = numero1 * numero2;
@@ -48,13 +49,15 @@ int main(void) { // aqui estamos chamando a função, e utilizamos o void, pois 
     printf("%.2f - %.2f = %.2f \n", numero1, numero2, sub);
     printf("%.2f * %.2f = %.2f \n", numero1, numero2, mult);
     printf("%.2f / %.2f = %.2f \n", numero1, numero2, div);}
-    printf("Invalido, a divisão não pode ser por 0\n\n"); // aqui deixo claro ao usuário que ele não pode usar o 0 e mostro a mensagem de erro
+    if(numero1 == 0 || numero2 == 0) {
+    printf("Invalido, a divisão não pode ser por 0\n\n");
+	} // aqui deixo claro ao usuário que ele nÃo pode usar o 0 e mostra a mensagem de erro
     printf("potencia do número  %.2f é %.2f \n", numero1, pot);
     printf("a media do número %.2f é %.2f \n", numero1, numero2, med);} // // aqui estou colocando no console as operações com os resultados já prontos 
 
    getch();
    
-   //minhas referências://www.cprogressivo.net/2012/12/Operacoes-matematicas-em-C--Soma-subtracao-multiplicacao-divisao-e-modulo-ou-resto-da-divisao-e-precedencia-dos-operadores.html,  
+   //minhas referÃªncias://www.cprogressivo.net/2012/12/Operacoes-matematicas-em-C--Soma-subtracao-multiplicacao-divisao-e-modulo-ou-resto-da-divisao-e-precedencia-dos-operadores.html,  
    //https://www.cprogressivo.net/2013/02/Criando-um-menu-em-C.html
     
 }
